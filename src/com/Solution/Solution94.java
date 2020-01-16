@@ -3,6 +3,7 @@ package com.Solution;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Stack;
 
 class TreeNode {
 	 int val;
@@ -22,14 +23,23 @@ public class Solution94 {
         return li;
     }
 	
-	/*public List<Integer> inorderTraversal(TreeNode root, List<Integer> li){
-		if(root != null){
-			inorderTraversal(root.left, li);
-			li.add(root.val);
-			inorderTraversal(root.right,li);
+	public List<Integer> inorderTraversal(TreeNode root, List<Integer> li){
+		Stack<TreeNode> stack = new Stack<>();
+		while(root != null){
+			if(root.left != null){
+				stack.add(root);
+				root = root.left;
+			}
+			else{
+				li.add(root.val);
+				if(root.right != null){
+					stack.add(root.right);
+					
+				}
+				
+			}
 		}
-		return li;
-	}*/
+	}
 
 	public static void main(String[] args) {
 		TreeNode tn = new TreeNode(1);
