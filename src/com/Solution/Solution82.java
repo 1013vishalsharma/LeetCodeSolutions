@@ -26,6 +26,9 @@ public class Solution82 {
 					}
 					if(i == null){
 						head = n;
+						prev = n;
+						if(n!=null)
+						n = n.next;
 					}
 					else{
 						i.next = n;
@@ -58,9 +61,9 @@ public class Solution82 {
 		
 		head.next = new ListNode(1);
 		head.next.next = new ListNode(1);
-		head.next.next.next = new ListNode(1);
-		//head.next.next.next = new ListNode(2);
-		//head.next.next.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(2);
+		//head.next.next.next = new ListNode(3);
+		head.next.next.next.next = new ListNode(3);
 		//head.next.next.next.next.next = new ListNode(3);
 		
 		
